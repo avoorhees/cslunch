@@ -1,0 +1,5 @@
+cron:
+- description: alert the team with everyones lunch choices
+  url: /email
+  schedule: every day 10:15
+  timezone: America/Chicago

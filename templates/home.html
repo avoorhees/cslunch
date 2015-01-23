@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GAE Demo | CS</title>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -15,8 +18,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,14 +39,21 @@
                 <div class="col-md-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            Submit Your Choice - {{ user }}
+                            Submit Your Choice
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="/">
+                            <form role="form" class="form-horizontal" method="post" action="/">
                                 <div class="form-group">
-                                    <label for="choice" class="col-sm-3 control-label">Enter Choice</label>
-                                    <div class="col-sm-9">
+                                    <label for="choice" class="col-md-3 control-label">Enter Choice:</label>
+                                    <div class="col-md-9">
                                       <input class="form-control" id="choice" name="choice" placeholder="Choice...">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name" class="col-md-3 control-label">Enter Name:</label>
+                                    <div class="col-md-9">
+                                      <input class="form-control" id="name" name="name" placeholder="Enter Name...">
                                     </div>
                                 </div>
 
@@ -69,7 +78,7 @@
                                 <tbody>
                                 {% for choice in choices %}
                                     <tr>
-                                        <td>{{ choice.choice}}</td>
+                                        <td>{{ choice.choice_text }}</td>
                                         <td>{{ choice.user }}</td>
                                     </tr>
                                 {% endfor %}
